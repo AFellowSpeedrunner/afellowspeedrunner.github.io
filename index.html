@@ -28,6 +28,23 @@
       margin-bottom: 20px;
     }
     
+    .menu {
+      margin-bottom: 20px;
+    }
+    
+    .menu-year {
+      font-size: 20px;
+      color: #333;
+      cursor: pointer;
+    }
+    
+    .menu-month {
+      font-size: 16px;
+      color: #777;
+      margin-left: 20px;
+      cursor: pointer;
+    }
+    
     .post {
       margin-bottom: 40px;
     }
@@ -46,11 +63,32 @@
     .post-content {
       color: #333;
     }
+    
+    .latest-post {
+      font-size: 18px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>Welcome to My Blog!</h1>
+    
+    <div class="menu">
+      <div class="menu-year" onclick="toggleMonths('2023')">2023
+        <div id="months-2023" style="display: none;">
+          <span class="menu-month">January</span>
+          <span class="menu-month">February</span>
+          <span class="menu-month">March</span>
+          <span class="menu-month">April</span>
+          <span class="menu-month">May</span>
+          <span class="menu-month">June</span>
+          <!-- Add more months here -->
+        </div>
+      </div>
+      <!-- Add more years here -->
+    </div>
 
     <div class="post">
       <h2 class="post-title">Test post</h2>
@@ -69,7 +107,22 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vehicula arcu libero, non finibus massa cursus a.</p>
       </div>
     </div>
+    
+    <div class="latest-post">
+      <a href="latest-post.html">Latest Blog Post</a>
+    </div>
 
   </div>
+  
+  <script>
+    function toggleMonths(year) {
+      var months = document.getElementById("months-" + year);
+      if (months.style.display === "none") {
+        months.style.display = "block";
+      } else {
+        months.style.display = "none";
+      }
+    }
+  </script>
 </body>
 </html>
